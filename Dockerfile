@@ -1,16 +1,5 @@
 FROM selenium/base:latest
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV DEBCONF_NONINTERACTIVE_SEEN true
-
-#===================
-# Timezone settings
-# Possible alternative: https://github.com/docker/docker/issues/3359#issuecomment-32150214
-#===================
-ENV TZ "US/Pacific"
-RUN echo "${TZ}" > /etc/timezone \
-  && dpkg-reconfigure --frontend noninteractive tzdata
-
 #==============
 # PhantomJS
 #==============
